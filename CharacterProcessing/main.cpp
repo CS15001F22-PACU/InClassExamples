@@ -31,9 +31,9 @@ int main ()
 	const char filename[] = "data.txt";
 	char array[SIZE];
 
-	//cout << countCharsInFile (filename) << endl;
+	cout << countCharsInFile (filename) << endl;
 
-	cout << getKey (array, SIZE);
+	// cout << getKey (array, SIZE);
 
 	return EXIT_SUCCESS;
 }
@@ -55,13 +55,14 @@ int countCharsInFile (const char filename[]) {
 	inFile.open (filename);
 	if (! inFile.fail ())
 	{
+		inFile.get (ch);
 		while (!inFile.eof ()) {
-			inFile.get (ch);
-			//count++;
-			if (!isspace (ch))
+			count++;
+			/*if (!isspace (ch))
 			{
 				count++;
-			}
+			}*/
+			inFile.get (ch);
 		}
 	}
 
